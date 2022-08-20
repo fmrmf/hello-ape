@@ -3,6 +3,9 @@ pragma solidity 0.8.13;
 
 contract SimpleContract {
     address private _owner;
+    uint256 public count;
+
+    event Set(address indexed _prior, address indexed _current, uint256 _count);
 
     constructor() {
         _owner = msg.sender;
@@ -14,6 +17,7 @@ contract SimpleContract {
 
     function set(address owner) external {
         require(msg.sender == _owner);
+        emit Set(_owner, owner, ++count);
         _owner = owner;
     }
 }
