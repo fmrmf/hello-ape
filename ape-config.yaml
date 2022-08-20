@@ -1,2 +1,10 @@
 name: hello-ape
+
+plugins:
+  - name: solidity
+  - name: notebook
+
 default_ecosystem: ethereum
+ethereum:
+  local:
+    default_provider: foundry
