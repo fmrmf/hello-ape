@@ -3,8 +3,12 @@ name: hello-ape
 plugins:
   - name: solidity
   - name: notebook
+  - name: alchemy
+  - name: etherscan
 
 default_ecosystem: ethereum
+
 ethereum:
-  local:
-    default_provider: foundry
+  default_network: mainnet
+  mainnet:
+    default_provider: alchemy
